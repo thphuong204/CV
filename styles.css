@@ -1,0 +1,417 @@
+body{
+    color: rgb(34, 163, 159);
+    font-family: sans-serif;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color:  rgba(34, 163, 159,1);
+}
+
+.navbar-nav {   
+    width: 800px;
+    display: flex;
+    justify-content: space-between ;
+}
+
+
+.navbar-nav>.nav-item>.nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: max(1.5vw,16px);
+    color: white;
+    padding: 4px 0;
+}
+
+.navbar-nav>.nav-item>.nav-link:hover{
+    border: 1px;
+    background-color: rgba(255, 255, 255,0.4);
+    border-radius: 10px;
+}
+
+/* Banner */
+#banner {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(34, 163, 159,0.3);
+    width: 100%;
+    height: 450px;
+}
+#banner>.row {
+    position: relative;
+    top: -50%;
+    width: 100%;
+    padding: 5px 0 0 0;
+    white-space: nowrap;
+    font-size: 50px;
+    transform: rotate(-30deg);
+}
+#banner>.row svg{
+    color: white;
+    transition: 0.5s;
+    padding: 0 2px;
+    user-select: none;
+    cursor: default;
+}
+
+#banner>.row svg:hover{
+    color: rgb(255, 162, 0);
+    text-shadow: 0 0 200px rgb(255, 162, 0);
+}
+
+#banner>.row div{
+    animation: animate1 20s linear infinite;
+    animation-delay: -20s;
+}
+
+#banner>.row div:nth-child(2){
+    animation: animate2 20s linear infinite;
+    animation-delay: -20s;
+}
+
+@keyframes animate1 {
+    0% {
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+#banner>.row:nth-child(even) div{
+    animation: animate3 20s linear infinite;
+    animation-delay: -20s;
+}
+
+#banner>.row:nth-child(even) div:nth-child(2){
+    animation: animate4 20s linear infinite;
+    animation-delay: -20s;
+}
+
+@keyframes animate3 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+@keyframes animate4 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* About Me */
+#about-me {
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#about-me>div>h1 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#about-me .general {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#about-me .general>.card {
+    display: flex;
+    flex-direction: column;
+    width: max(30vw,400px);
+    background-color: rgba(34, 163, 159,0.3);
+    border:rgba(34, 163, 159,0.3);
+    color:rgb(67, 66, 66);
+    align-items: center;
+    border-radius: 30px;
+}
+
+#about-me .general>.card  .card-text {
+    font-size: max(1vw,20px)
+}
+
+#about-me .general>.card>.card-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+    filter: grayscale(100%);
+    transition: 0.8s ease-in-out;
+}
+
+#about-me .general>.card>.card-img:hover {
+    transform: scaleX(-1);
+}
+
+#about-me .general>.card>.card-img>img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px 0 0 0;
+}
+
+#about-me .general>.card>.card-body>.card-text {
+    margin: 0;
+}
+
+/* Education & Experience */
+#edu-exp {
+    width: 100%;
+    background-color:rgba(34, 163, 159,0.3);  
+    color: rgb(67, 66, 66);
+    padding: 30px 0; 
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+#edu-exp>div>h1 {
+    position: relative;
+    font-weight: bold;
+    margin-top: 10px;
+   
+}
+
+#edu-exp>div>h1:after {
+    background: #fff;
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    left: -25%;
+    bottom: 0;
+    content: '';
+    opacity: 0.5;
+    transform: skew(-40deg) scaleY(0);
+    transition: all 1s ease-out;
+  }
+
+#edu-exp>div>h1:hover:after {
+    cursor: pointer;
+    transform: skew(-40deg) scaleY(1);
+    /* transition: all 0.4s cubic-bezier(0.6, 0.55, 0.32, 1); */
+}
+
+#edu-exp>.edu-content {
+    color:#434242; 
+}
+
+#working {
+    font-size: max(1.2vw,24px);
+    font-weight: bold;
+}
+
+#working>h6 {
+    font-style: italic;
+    font-size: max(0.8vw,18px);
+    margin-bottom: 30px;
+}
+
+#working>ul {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+}
+
+#working>ul>div>li{
+    list-style: none;
+    text-align: start;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#working>ul>div>li>.logo{
+    width: max(3vw,40px);
+    height: max(1.5vw,20px);
+    border: none;
+    border-radius: 50%;
+}
+
+#education {
+    font-size: max(1.2vw,24px);
+    font-weight: bold;
+}
+
+#education>h6 {
+    font-style: italic;
+    font-size: max(0.8vw,18px);
+    margin-bottom: 20px;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+/* Abilities */
+#abilities {
+    padding: 50px 0;
+}
+
+#abilities>div>h1 {
+    font-weight: bold;
+    margin: 0 0 30px 0;
+}
+
+#abilities .progress {
+    margin: 0 20px 40px 20px;
+    height: 24px;
+    transition: all 1s ease-out;
+}
+
+#abilities .progress>.progress-bar {
+    height: 24px;
+    font-weight: bold;
+    font-size: max(1vw,18px);
+    background-color: rgba(34, 163, 159,1);
+}
+
+#abilities .progress:hover {
+    transform: scaleY(2) ;
+    cursor: pointer;
+}
+
+#abilities .progress:hover .progress-bar {
+    background-color:rgb(255, 162, 0);
+}
+
+  
+/* Projects */
+#projects {
+    background-color: rgba(34, 163, 159,0.3);
+    color: rgb(67, 66, 66);
+    padding-bottom: 30px;    
+    padding-top: 20px;
+}
+
+#projects>div>h1 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#projects>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#projects>.row>.col-lg-4{
+    padding: 0 30px;
+}
+
+#projects>.row>.col-lg-4>.card {
+    height: 450px;
+    min-width: 300px;
+    margin: 20px 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projects>.row>.col-lg-4>.card>.card-img{
+    height: 350px;
+    width: 70%;
+    min-width: 250px;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    
+}
+#projects>.row>.col-lg-4>.card>.card-img>img{
+    height: 350px;
+    width: 100%;
+    padding: 30px 0 0 0 ;
+    opacity: 0.8;
+    filter: sepia(90%);
+}
+#projects>.row>.col-lg-4>.card>.card-img>img:hover{
+    opacity: 1;
+    filter: sepia(0);
+    animation: shake 0.8s;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+#projects>.row>.col-lg-4>.card>.card-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+}
+
+#projects>.row>.col-lg-4>.card>.card-body>.card-text{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Contacts */
+#contacts>div>h1 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#contacts>#contact-form {
+    margin: 20px;
+}
+
+#contacts>#contact-form>form>label {
+    margin: 0;
+    font-size: max(1.2vw,24px);
+}
+
+#contacts>#contact-form>form>input {
+    margin: 10px;
+}
+
+#contacts>#contact-form>form>textarea {
+    margin: 10px;
+}
+
+#contacts>#contact-form>form>button {
+    margin: 10px;
+}
+
+#contacts>div>div {
+    justify-content: center;
+}
+
+#contacts>div>div>a>svg {
+    width: 2vw;
+    height: 2vw;
+    margin-left: 5px;
+    margin-right: 5px;
+}
